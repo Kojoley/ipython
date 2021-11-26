@@ -1017,12 +1017,11 @@ def test_script_out_err():
     sys.platform == "win32", reason="This test does not run under Windows"
 )
 @pytest.mark.anyio
-async def test_script_bg_out(event_loop):
+async def test_script_bg_out():
     ip = get_ipython()
     ip.run_cell_magic("script", "--bg --out output sh", "echo 'hi'")
     assert (await ip.user_ns["output"].read()) == b"hi\n"
     ip.user_ns["output"].close()
-    event_loop.stop()
 
 
 @dec.skip_win32
