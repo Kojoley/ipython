@@ -970,7 +970,9 @@ def test_script_config():
 
 @pytest.fixture
 def event_loop():
-    yield asyncio.get_event_loop_policy().get_event_loop()
+    loop = asyncio.get_event_loop_policy().get_event_loop()
+    yield
+    loop.stop()
 
 
 @dec.skip_win32
