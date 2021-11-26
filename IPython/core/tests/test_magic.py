@@ -1016,6 +1016,7 @@ def test_script_out_err():
 @pytest.mark.skipif(
     sys.platform == "win32", reason="This test does not run under Windows"
 )
+@pytest.mark.anyio
 async def test_script_bg_out(event_loop):
     ip = get_ipython()
     ip.run_cell_magic("script", "--bg --out output sh", "echo 'hi'")
@@ -1028,6 +1029,7 @@ async def test_script_bg_out(event_loop):
 @pytest.mark.skipif(
     sys.platform == "win32", reason="This test does not run under Windows"
 )
+@pytest.mark.anyio
 async def test_script_bg_err():
     ip = get_ipython()
     ip.run_cell_magic("script", "--bg --err error sh", "echo 'hello' >&2")
@@ -1039,6 +1041,7 @@ async def test_script_bg_err():
 @pytest.mark.skipif(
     sys.platform == "win32", reason="This test does not run under Windows"
 )
+@pytest.mark.anyio
 async def test_script_bg_out_err():
     ip = get_ipython()
     ip.run_cell_magic(

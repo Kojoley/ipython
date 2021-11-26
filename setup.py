@@ -183,6 +183,7 @@ extras_require = dict(
     test_extra=[
         "pytest",
         "testpath",
+        "anyio",
         "curio",
         "matplotlib!=3.2.0",
         "nbformat",
