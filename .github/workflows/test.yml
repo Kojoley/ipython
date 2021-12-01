@@ -32,7 +32,7 @@ jobs:
           # Tests latest development Python version
           - os: ubuntu-latest
             python-version: "3.11-dev"
-            deps: test
+            deps: test_extra
 
     steps:
     - uses: actions/checkout@v2
