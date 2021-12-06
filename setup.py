@@ -87,23 +87,6 @@ from setupbase import (
 )
 
 #-------------------------------------------------------------------------------
-# Handle OS specific things
-#-------------------------------------------------------------------------------
-
-if os.name in ('nt','dos'):
-    os_name = 'windows'
-else:
-    os_name = os.name
-
-# Under Windows, 'sdist' has not been supported.  Now that the docs build with
-# Sphinx it might work, but let's not turn it on until someone confirms that it
-# actually works.
-if os_name == 'windows' and 'sdist' in sys.argv:
-    print('The sdist command is not available under Windows.  Exiting.')
-    sys.exit(1)
-
-
-#-------------------------------------------------------------------------------
 # Things related to the IPython documentation
 #-------------------------------------------------------------------------------
 
