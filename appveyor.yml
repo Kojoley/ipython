@@ -20,6 +20,8 @@ init:
 
 install:
   - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
+  - python -m venv virtenv
+  - virtenv/Scripts/activate.bat
   - python -m pip install --upgrade setuptools 'pip<22'
   - pip install pytest-cov
   - pip install -e .[test_extra]
